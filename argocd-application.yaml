@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-upgrade
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/<your-org>/openshift-upgrades-gitops.git'
+    targetRevision: main
+    path: overlays/upgrade-4-16
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openshift-cluster-version
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
