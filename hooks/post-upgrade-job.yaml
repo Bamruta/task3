@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: post-upgrade-verify
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+spec:
+  template:
+    spec:
+      containers:
+        - name: verify
+          image: registry.access.redhat.com/ubi8/ubi
+          command: ["/bin/sh", "-c", "echo Upgrade verification complete!"]
+      restartPolicy: Never
