@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pre-upgrade-check
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+spec:
+  template:
+    spec:
+      containers:
+        - name: check
+          image: registry.access.redhat.com/ubi8/ubi
+          command: ["/bin/sh", "-c", "echo Pre-upgrade checks running..."]
+      restartPolicy: Never
