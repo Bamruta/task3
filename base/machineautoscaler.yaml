@@ -1,0 +1,11 @@
+apiVersion: autoscaling.openshift.io/v1
+kind: MachineAutoscaler
+metadata:
+  name: worker-autoscaler
+  namespace: openshift-machine-api
+spec:
+  minReplicas: 2
+  maxReplicas: 5
+  scaleTargetRef:
+    kind: MachineSet
+    name: cluster3-gqrqm-worker-0
