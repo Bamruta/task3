@@ -9,4 +9,4 @@ spec:
   scaleTargetRef:
     apiVersion: machine.openshift.io/v1beta1
     kind: MachineSet
-    name: ipi-cluster-xmztr-worker-0-dhdk7   # change to your MachineSet name
+    name: ipi-cluster-xmztr-worker-0   # change to your MachineSet name
