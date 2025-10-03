@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/<your-org>/task3.git'
-    targetRevision: subtask2
+    targetRevision: sub-task2
     path: autoscaler
   destination:
     server: https://kubernetes.default.svc
