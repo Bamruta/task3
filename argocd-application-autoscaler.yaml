@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-autoscaler
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/<your-org>/task3.git'
+    targetRevision: subtask2
+    path: autoscaler
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openshift-machine-api
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
