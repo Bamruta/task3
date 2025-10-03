@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/<your-org>/openshift-upgrades-gitops.git'
+    repoURL: 'https://github.com/Bamruta/task.git'
     targetRevision: main
     path: overlays/upgrade-4-16
   destination:
