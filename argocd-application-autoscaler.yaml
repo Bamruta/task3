@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/<your-org>/task3.git'
+    repoURL: 'https://github.com/Bamruta/task3.git'
     targetRevision: sub-task2
     path: autoscaler
   destination:
